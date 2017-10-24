@@ -3,12 +3,13 @@
 class Linked_List(object):
     '''.'''
 
-    def __init__(self, ittr = ()):
+    def __init__(self, itr = ()):
         self.head = None
         self._size = 0
-        for item in ittr:
-            push(item)
-
+        if isinstance(itr, (str, tuple, list))
+            for item in itr:
+                push(item)
+                
     def push(val):
         '''.'''
         new_head = Node(val)
@@ -38,6 +39,10 @@ class Linked_List(object):
             count_node = count_node.next_node
         return count
 
+    def __len__():
+        '''.'''
+        return size()
+
     def search(val):
         '''.'''
         search_node = self.head
@@ -60,6 +65,7 @@ class Linked_List(object):
     def display():
         '''.'''
         return_text = "("
+
 
 
 class Node(object):
