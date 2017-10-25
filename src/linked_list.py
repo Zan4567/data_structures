@@ -6,18 +6,18 @@ class Linked_List(object):
     def __init__(self, itr = ()):
         self.head = None
         self._size = 0
-        if isinstance(itr, (str, tuple, list))
+        if isinstance(itr, (str, tuple, list)):
             for item in itr:
-                push(item)
-                
-    def push(val):
+                self.push(item)
+
+    def push(self, val):
         '''.'''
         new_head = Node(val)
         new_head.next_node = self.head
         self.head = new_head
         self._size += 1
 
-    def pop():
+    def pop(self):
         '''.'''
         pop_node = self.head
         if pop_node is None: raise IndexError('No nodes in list')
@@ -26,11 +26,11 @@ class Linked_List(object):
         self._size -= 1
         return pop_node.value
 
-    def size():
+    def size(self):
         '''.'''
-        return _size
+        return self._size
 
-    def size2():
+    def size2(self):  # pragma no cover
         '''.'''
         count = 0
         count_node = self.head
@@ -39,11 +39,11 @@ class Linked_List(object):
             count_node = count_node.next_node
         return count
 
-    def __len__():
+    def __len__(self):
         '''.'''
-        return size()
+        return self.size()
 
-    def search(val):
+    def search(self, val):
         '''.'''
         search_node = self.head
         while(search_node):
@@ -51,7 +51,7 @@ class Linked_List(object):
             search_node = search_node.next_node
         return None
 
-    def remove(node):
+    def remove(self, node):
         '''.'''
         search_node = self.head
         while(search_node):
@@ -62,9 +62,18 @@ class Linked_List(object):
                 return
             search_node = search_node.next_node
 
-    def display():
+    def display(self):
         '''.'''
-        return_text = "("
+        string_list = '('
+        current_node = self.head
+        while current_node:
+            string_list = string_list + current_node.value
+            if current_node.next_node:
+                string_list = string_list + ', '
+            current_node = current_node.next_node
+
+        string_list = string_list + ')'
+        return string_list
 
 
 
