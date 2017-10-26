@@ -1,9 +1,10 @@
 '''.'''
 
+
 class Linked_List(object):
     '''.'''
 
-    def __init__(self, itr = ()):
+    def __init__(self, itr=()):
         self.head = None
         self._size = 0
         if isinstance(itr, (str, tuple, list)):
@@ -20,7 +21,8 @@ class Linked_List(object):
     def pop(self):
         '''.'''
         pop_node = self.head
-        if pop_node is None: raise IndexError('No nodes in list')
+        if pop_node is None:
+            raise IndexError('No nodes in list')
         self.head = pop_node.next_node
         pop_node.next_node = None
         self._size -= 1
@@ -47,7 +49,8 @@ class Linked_List(object):
         '''.'''
         search_node = self.head
         while(search_node):
-            if search_node.value == val: return search_node
+            if search_node.value == val:
+                return search_node
             search_node = search_node.next_node
         return None
 
@@ -76,9 +79,8 @@ class Linked_List(object):
         return string_list
 
 
-
 class Node(object):
     '''.'''
-    def __init__(self, val = None):
+    def __init__(self, val=None):
         self.next_node = None
         self.value = val

@@ -2,6 +2,7 @@
 
 import pytest
 
+
 def test_node_has_attributes():
     """A node object must have a.value and next attribute."""
     from linked_list import Node
