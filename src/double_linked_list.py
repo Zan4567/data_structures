@@ -1,5 +1,6 @@
 """."""
 
+
 class Node(object):
     """."""
     def __init__(self, val=None):
@@ -14,6 +15,9 @@ class DoublyLinkedList(object):
         self.tail = None
         self.head = None
         self._size = 0
+
+    def __len__(self):
+        return self._size
 
     def push(self, val):
         new_node = Node(val)
@@ -59,7 +63,6 @@ class DoublyLinkedList(object):
         self._size -= 1
         return the_head.val
 
-
     def shift(self):
         if self._size == 0:
             raise IndexError("Empty list, nothing to pop")
@@ -85,7 +88,6 @@ class DoublyLinkedList(object):
                 else:
                     self.tail = current.prev
                 self._size -= 1
+                return
             current = current.next
         raise ValueError('Value not in list')
-
-
