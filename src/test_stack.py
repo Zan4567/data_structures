@@ -4,7 +4,7 @@ import pytest
 
 
 def stack_fixture():
-    """."""
+    """Create a stack object"""
     from stack import Stack
     return Stack()
 
