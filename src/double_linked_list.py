@@ -1,8 +1,8 @@
-"""."""
+"""A double-ended linked list"""
 
 
 class Node(object):
-    """."""
+    """The node object. All methods are in the DoublyLinkedList class"""
     def __init__(self, val=None):
         self.val = val
         self.next = None
@@ -10,7 +10,7 @@ class Node(object):
 
 
 class DoublyLinkedList(object):
-    """."""
+    """Linked list traversable in both directions"""
     def __init__(self):
         self.tail = None
         self.head = None
@@ -20,6 +20,7 @@ class DoublyLinkedList(object):
         return self._size
 
     def push(self, val):
+        '''Add a new node to the head of the list'''
         new_node = Node(val)
         if self._size == 0:
             self.list_begins(new_node)
@@ -30,6 +31,7 @@ class DoublyLinkedList(object):
         self._size += 1
 
     def append(self, val):
+        '''Add a new node to the tail'''
         new_node = Node(val)
         if self._size == 0:
             self.list_begins(new_node)
@@ -40,6 +42,7 @@ class DoublyLinkedList(object):
         self._size += 1
 
     def list_begins(self, node):
+        '''Function called by push and append to add to an empty list'''
         self.tail = node
         self.head = node
         self._size += 1
@@ -53,6 +56,7 @@ class DoublyLinkedList(object):
         return single_node.val
 
     def pop(self):
+        '''take and return the node at the head of the list'''
         if self._size == 0:
             raise IndexError("Empty list, nothing to pop")
         elif self._size == 1:
@@ -64,6 +68,7 @@ class DoublyLinkedList(object):
         return the_head.val
 
     def shift(self):
+        '''take and return the node at the tail'''
         if self._size == 0:
             raise IndexError("Empty list, nothing to pop")
         elif self._size == 1:
@@ -75,6 +80,7 @@ class DoublyLinkedList(object):
         return the_tail.val
 
     def remove(self, value):
+        '''remove the first node with the given value'''
         current = self.head
         while current:
             if current.val == value:
