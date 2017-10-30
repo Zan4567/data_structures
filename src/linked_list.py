@@ -1,8 +1,8 @@
-'''.'''
+'''Linked list module'''
 
 
 class Linked_List(object):
-    '''.'''
+    '''A singly-linked list'''
 
     def __init__(self, itr=()):
         self.head = None
@@ -12,14 +12,14 @@ class Linked_List(object):
                 self.push(item)
 
     def push(self, val):
-        '''.'''
+        '''Add a new node to the head of the list'''
         new_head = Node(val)
         new_head.next_node = self.head
         self.head = new_head
         self._size += 1
 
     def pop(self):
-        '''.'''
+        '''take and return the node at the head of the list'''
         pop_node = self.head
         if pop_node is None:
             raise IndexError('No nodes in list')
@@ -29,11 +29,11 @@ class Linked_List(object):
         return pop_node.value
 
     def size(self):
-        '''.'''
+        '''get the number of nodes in the list'''
         return self._size
 
     def size2(self):  # pragma no cover
-        '''.'''
+        '''get the number of nodes in the list (alternate implementation)'''
         count = 0
         count_node = self.head
         while(count_node):
@@ -42,11 +42,11 @@ class Linked_List(object):
         return count
 
     def __len__(self):
-        '''.'''
+        '''Get the number of nodes in the list. Used by len()'''
         return self.size()
 
     def search(self, val):
-        '''.'''
+        '''Find the first node in the list with the given value'''
         search_node = self.head
         while(search_node):
             if search_node.value == val:
@@ -55,7 +55,7 @@ class Linked_List(object):
         return None
 
     def remove(self, node):
-        '''.'''
+        '''Remove the given node from the list'''
         search_node = self.head
         while(search_node):
             if search_node.next_node == node:
@@ -66,7 +66,7 @@ class Linked_List(object):
             search_node = search_node.next_node
 
     def display(self):
-        '''.'''
+        '''Display the contents of the list in the format of a tuple'''
         string_list = '('
         current_node = self.head
         while current_node:
@@ -80,7 +80,7 @@ class Linked_List(object):
 
 
 class Node(object):
-    '''.'''
+    '''Individual list nodes. All methods are in the Linked_List class'''
     def __init__(self, val=None):
         self.next_node = None
         self.value = val
