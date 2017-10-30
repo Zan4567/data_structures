@@ -2,8 +2,10 @@
 
 
 class Deque(object):
+    '''Deque class implementation'''
 
     def __init__(self):
+        '''constructor'''
         self.end = None
         self.front = None
         self._size = 0
