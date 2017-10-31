@@ -49,6 +49,8 @@ class Deque(object):
 
     def popleft(self):
         '''removes a value from the front of the deque and returns it'''
+        if self._size == 0:
+            raise IndexError
         if self._size == 1:
             return self.poponly()
         the_node = self.front
