@@ -1,4 +1,4 @@
-'''.'''
+'''Fixtures for Binary Search Tree.'''
 import pytest
 import random
 
